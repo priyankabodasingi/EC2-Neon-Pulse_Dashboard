@@ -3,7 +3,7 @@ ADD . /pythonapp
 WORKDIR /pythonapp
 RUN pip install --prefix=/devops -r requirements.txt
 
-FROM python:3.12-alpine AS runtime
+FROM python:3.12-slim AS runtime
 LABEL author=devopsteam
 LABEL project=python
 COPY --from=build /pythonapp /dummypython
